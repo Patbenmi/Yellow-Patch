@@ -1,0 +1,23 @@
+body {
+  padding-top: 
+  text-align: center;
+}
+canvas {
+  background-image: url("https://images.app.goo.gl/DTUxAWHdtWv1eVU49");
+  height: 100%;
+  width: 100%;
+}
+.gameScreen {
+  max-width: 75em;
+  background-color:cornflowerblue;
+  margin: auto;
+  padding: 1em;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr
+  grid-template-areas;  "top top top top"
+                        "urgent1 urgent1 score score"
+                        "gameBoard gameBoard gameBoard gameBoard"
+                        "yellowPatches yellowPatches urgent2 urgent2"
+  grid-template-areas:
+}
