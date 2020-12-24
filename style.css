@@ -5,41 +5,43 @@ html, body {
 body {
   padding-top: 1em;
   text-align: center;
-  background: url("./Grass.jpg");
+  background-image: url("./walk.jpg");
+  background-color: darkgreen;
   background-size: cover;
   background-repeat: space;
 }
 h1, h2 {
   font-family: 'Bangers', cursive;
+  color:yellow;
 }
 h1 {
-  color: yellowgreen;
-  font-size: 100px;
+  font-size: 75px;
 }
 canvas { 
-  background: url("./healthy Grass.jpg");
   background-color: chartreuse;
   height: 50vh;
   width: 100%;
 } 
 #gameScreen {
   max-width: 50em;
-  background-color:cornflowerblue;
+  /* justify-self: center; */
+  background-color: cornflowerblue;
   margin: 0 auto;
   padding: 1em;
   display: grid;
   grid-gap: 1em;
-  grid-template-columns: .25fr .5fr .5fr .25fr;
+  grid-template-columns: .25fr .5fr .25fr;
   grid-template-rows: .25fr .5fr .25fr;
-  grid-template-areas:  "urgent1 urgent1 urgent1 urgent1"
-                        "playArea playArea playArea playArea"
-                        "score urgent2 urgent2 urine"; 
+  grid-template-areas: "score urgent1 urgent1"
+                       "playArea playArea playArea"
+                       "urgent2 urgent2 urine"
 }
 #score, #urine, #urgent1, #urgent2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:rgb(139, 125, 0); 
+  background-color: chocolate;
+   
 }
  #score {
   grid-area: score;
