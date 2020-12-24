@@ -1,23 +1,58 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
 body {
-  padding-top: 
+  padding-top: 1em;
   text-align: center;
+  background: url("./Grass.jpg");
+  background-size: cover;
+  background-repeat: space;
 }
-canvas {
-  background-image: url("https://images.app.goo.gl/DTUxAWHdtWv1eVU49");
-  height: 100%;
+h1, h2 {
+  font-family: 'Bangers', cursive;
+}
+h1 {
+  color: yellowgreen;
+  font-size: 100px;
+}
+canvas { 
+  background: url("./healthy Grass.jpg");
+  background-color: chartreuse;
+  height: 50vh;
   width: 100%;
-}
-.gameScreen {
-  max-width: 75em;
+} 
+#gameScreen {
+  max-width: 50em;
   background-color:cornflowerblue;
-  margin: auto;
+  margin: 0 auto;
   padding: 1em;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr
-  grid-template-areas;  "top top top top"
-                        "urgent1 urgent1 score score"
-                        "gameBoard gameBoard gameBoard gameBoard"
-                        "yellowPatches yellowPatches urgent2 urgent2"
-  grid-template-areas:
+  grid-gap: 1em;
+  grid-template-columns: .25fr .5fr .5fr .25fr;
+  grid-template-rows: .25fr .5fr .5fr;
+  grid-template-areas:  "urgent1 urgent1 urgent1 urgent1"
+                        "playArea playArea playArea playArea"
+                        "score urgent2 urgent2 urine"; 
+}
+#score, #urine, #urgent1, #urgent2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:rgb(139, 125, 0); 
+}
+ #score {
+  grid-area: score;
+}
+#urgent1 {
+  grid-area: urgent1;
+}
+#playArea {
+  grid-area: playArea;
+}
+#urine {
+  grid-area: urine;
+}
+#urgent2 {
+  grid-area: urgent2;
 }
