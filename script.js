@@ -22,9 +22,9 @@ let context = gameBoard.getContext("2d")
 
 let anitaPettigrew = {
   win: false,
-  x = 20,
-  y = 20,
-  color: "peach",
+  x: 20,
+  y: 20,
+  color: "yellow",
   width: 20,
   height: 20,
   render: function () {
@@ -35,8 +35,8 @@ let anitaPettigrew = {
 let pomeranian = {
   urine: false,
   win: false,
-  x = 20,
-  y = 20,
+  x: 20,
+  y: 20,
   color: "orange",
   width: 20,
   height: 20,
@@ -51,5 +51,7 @@ let gamePlay =() => {
   scoreCount.innerText = 0;
   flashingMessage1.innerText = urgentWords[i];
   flashingMessage2.innerText = urgentWords2[i];
-  if (urineCount < 3)
+  if (urineCount < 3){
+    console.log("Red")
+  }
 }
