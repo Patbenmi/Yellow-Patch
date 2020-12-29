@@ -12,9 +12,6 @@ let flashingMessage2 = document.getElementById(urgent2);
 
 let i = Math.floor((Math.random() * 5));
 
-flashingmessage1.innertext = urgentWords[i];
-flashingMessage2.innerText = urgentWords2[i]
+// flashingmessage1.innertext = urgentWords[i];
+// flashingMessage2.innerText = urgentWords2[i];
 console.log("Blue");
-
-flashAlgorithm();
-// flashAlgorithm(flashMessage2);

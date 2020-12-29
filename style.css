@@ -1,14 +1,13 @@
-html, body {
+/* html, body {
   margin: 0;
   padding: 0;
-}
+} */
 body {
-  padding-top: 1em;
+  /* padding-top: 1em; */
   text-align: center;
-  background-image: url("./walk.jpg");
   background-color: darkgreen;
   background-size: cover;
-  background-repeat: space;
+  background-repeat: no-repeat;
 }
 h1, h2 {
   font-family: 'Bangers', cursive;
@@ -32,9 +31,13 @@ canvas {
   grid-gap: 1em;
   grid-template-columns: .25fr .5fr .25fr;
   grid-template-rows: .25fr .5fr .25fr;
-  grid-template-areas: "score urgent1 urgent1"
+  grid-template-areas: "playArea playArea playArea"
                        "playArea playArea playArea"
-                       "urgent2 urgent2 urine"
+                       "playArea playArea playArea"
+}
+#game {
+  background-image: url("./walk.jpg");
+  background-size: cover;
 }
 #score, #urine, #urgent1, #urgent2 {
   display: flex;
