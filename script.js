@@ -24,31 +24,32 @@ let anitaPettigrew = {
   win: false,
   x = 20,
   y = 20,
-  color: #peach,
+  color: "peach",
   width: 20,
   height: 20,
   render: function () {
     context.fillStyle = this.color;
     context.fillRect = (this.x, this.y, this.width, this.height);
-  };
+  }
 };
 let pomeranian = {
   urine: false,
   win: false,
   x = 20,
   y = 20,
-  color: #orange,
+  color: "orange",
   width: 20,
   height: 20,
   render: function() {
     context.fillStyle = this.color;
     context.fillStyle = (this.x, this.y, this.width, this.height);
-  };
+  }
 };
 let gamePlay =() => {
   context.clearRect(0,0, gameBoard.width, gameBoard.height);
-  urineCount.innerText = 3
-  scoreCount.innerText = 0
+  urineCount.innerText = 0;
+  scoreCount.innerText = 0;
   flashingMessage1.innerText = urgentWords[i];
   flashingMessage2.innerText = urgentWords2[i];
+  if (urineCount < 3)
 }
