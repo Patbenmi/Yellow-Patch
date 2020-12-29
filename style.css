@@ -35,29 +35,25 @@ canvas {
                        "playArea playArea playArea"
                        "playArea playArea playArea"
 }
+#playArea {
+  grid-area: playArea;
+}
 #game {
   background-image: url("./walk.jpg");
   background-size: cover;
 }
 #score, #urine, #urgent1, #urgent2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: chocolate;
-   
-}
- #score {
-  grid-area: score;
-}
+  
+};
+#score {
+
+};
 #urgent1 {
-  grid-area: urgent1;
-}
-#playArea {
-  grid-area: playArea;
-}
+
+};
 #urine {
-  grid-area: urine;
-}
+
+};
 #urgent2 {
-  grid-area: urgent2;
-}
+
+};
