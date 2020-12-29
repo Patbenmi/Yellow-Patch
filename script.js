@@ -21,7 +21,7 @@ console.log("Blue");
 let context = gameBoard.getContext("2d")
 
 let anitaPettigrew = {
-  urine: false,
+  win: false,
   x = 20,
   y = 20,
   color: #peach,
@@ -34,6 +34,7 @@ let anitaPettigrew = {
 };
 let pomeranian = {
   urine: false,
+  win: false,
   x = 20,
   y = 20,
   color: #orange,
@@ -46,4 +47,8 @@ let pomeranian = {
 };
 let gamePlay =() => {
   context.clearRect(0,0, gameBoard.width, gameBoard.height);
+  urineCount.innerText = 3
+  scoreCount.innerText = 0
+  flashingMessage1.innerText = urgentWords[i];
+  flashingMessage2.innerText = urgentWords2[i];
 }
