@@ -7,10 +7,10 @@ const urgentWords = ["STOP!!!", "GET OFF THE LAWN!!!", "DON'T DO THAT!!!", "WATC
 const urgentWords2 = ["WATCH THAT!!!", "NOT ON MY LAWN", "DAGNABBIT", "STOP!!!", "GET OFF THE LAWN!!!", "DON'T DO THAT!!!"];
 
 
-let flashingMessage1 = document.getElementById(urgent1);
-let flashingMessage2 = document.getElementById(urgent2);
-let urineCount = document.getElementById(urine);
-let scoreCount = document.getElementById()
+let flashingMessage1 = document.getElementById("urgent1");
+let flashingMessage2 = document.getElementById("urgent2");
+let urineCount = document.getElementById("urine");
+let scoreCount = document.getElementById("score");
 
 let i = Math.floor((Math.random() * 5));
 
