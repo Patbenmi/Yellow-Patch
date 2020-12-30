@@ -4,8 +4,8 @@
 } */
 body {
   /* padding-top: 1em; */
+  color: yellow;
   font-family: 'Bangers', cursive;
-  justify-content: center;
   background-color: darkgreen;
   background-size: cover;
   background-repeat: no-repeat;
@@ -57,11 +57,29 @@ canvas {
   border: 5px solid blue;
 };
 #urgent1 {
-
+  position: relative;
+  text-align: center;
+  color: yellow;
+  width: 75px;
+  Top: 200px;
+  left: 30px;
+  border: 5px solid blue;
 };
 #urine {
-
+  position: relative;
+  text-align: center;
+  color: yellow;
+  width: 75px;
+  Top: 200px;
+  left: 30px;
+  border: 5px solid blue;
 };
 #urgent2 {
-
+  position: relative;
+  text-align: center;
+  color: yellow;
+  width: 75px;
+  Top: 200px;
+  left: 30px;
+  border: 5px solid blue;
 };
