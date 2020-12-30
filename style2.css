@@ -1,9 +1,4 @@
-/* html, body {
-  margin: 0;
-  padding: 0;
-} */
 body {
-  /* padding-top: 1em; */
   text-align: center;
   background-image: url("./walk.jpg");
   background-color: darkgreen;
@@ -16,49 +11,4 @@ h1, h2 {
 }
 h1 {
   font-size: 75px;
-}
-canvas { 
-  background-color: chartreuse;
-  height: 50vh;
-  width: 100%;
-} 
-#gameScreen {
-  max-width: 50em;
-  /* justify-self: center; */
-  background-color: cornflowerblue;
-  margin: 0 auto;
-  padding: 1em;
-  display: grid;
-  grid-gap: 1em;
-  grid-template-columns: .25fr .5fr .25fr;
-  grid-template-rows: .25fr .5fr .25fr;
-  grid-template-areas: "playArea playArea playArea"
-                       "playArea playArea playArea"
-                       "playArea playArea playArea"
-}
-#game {
-  background-image: url("./walk.jpg");
-  background-size: cover;
-}
-#score, #urine, #urgent1, #urgent2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: chocolate;
-   
-}
- #score {
-  grid-area: score;
-}
-#urgent1 {
-  grid-area: urgent1;
-}
-#playArea {
-  grid-area: playArea;
-}
-#urine {
-  grid-area: urine;
-}
-#urgent2 {
-  grid-area: urgent2;
 }
