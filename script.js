@@ -34,35 +34,24 @@ function AnitaPettigrew(x, y, color, width, height) {
     context.fillRect(this.x, this.y, this.width, this.height);
   }
 };
-// let anitaPettigrew = {
+// let pomeranian = {
+//   urine: false,
 //   win: false,
 //   x: 20,
 //   y: 20,
-//   color: "yellow",
+//   color: "orange",
 //   width: 20,
 //   height: 20,
-//   render: function () {
-//     context.fillStyle = "yellow";
-//     context.fillRect = (50, 50, 100, 100);
+//   render: function() {
+//     context.fillStyle = this.color;
+//     context.fillRect(this.x, this.y, this.width, this.height);
 //   }
 // };
-let pomeranian = {
-  urine: false,
-  win: false,
-  x: 20,
-  y: 20,
-  color: "orange",
-  width: 20,
-  height: 20,
-  render: function() {
-    context.fillStyle = this.color;
-    context.fillRect(this.x, this.y, this.width, this.height);
-  }
-};
 
 let gamePlay =() => {
   context.clearRect(0,0, gameBoard.width, gameBoard.height);
   anitaPettigrew.render();
+  pomeranian.render();
   urineCount.innerText = 0;
   scoreCount.innerText = 0;
   flashingMessage1.innerText = urgentWords[i];
@@ -99,6 +88,7 @@ function keypressHandler(key){
 document.addEventListener("DOMContentLoaded", function() {
   console.log("DOMContentLoaded");
   anitaPettigrew = new AnitaPettigrew(20, 20, "white", 20, 20);
+  pomeranian = new AnitaPettigrew(20, 20, "orange", 20, 20);
   document.addEventListener("keydown", (event) => {
     console.log(event.code);
     keypressHandler(event.code);
