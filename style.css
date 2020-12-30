@@ -18,7 +18,7 @@ h1 {
 }
 canvas { 
   background-color: chartreuse;
-  background-image: "./Healthy Grass.jpg";
+  background-image: url("./HealthyGrass.jpg");
   height: 50vh;
   width: 100%;
 } 

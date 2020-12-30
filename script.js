@@ -8,7 +8,6 @@ gameBoard.setAttribute('height', getComputedStyle(gameBoard)["height"]);
 const urgentWords = ["STOP!!!", "GET OFF THE LAWN!!!", "DON'T DO THAT!!!", "WATCH THAT!!!", "NOT ON MY LAWN", "DAGNABBIT"];
 const urgentWords2 = ["WATCH THAT!!!", "NOT ON MY LAWN", "DAGNABBIT", "STOP!!!", "GET OFF THE LAWN!!!", "DON'T DO THAT!!!"];
 
-
 let flashingMessage1 = document.getElementById("urgent1");
 let flashingMessage2 = document.getElementById("urgent2");
 let urineCount = document.getElementById("urine");
@@ -88,7 +87,7 @@ function keypressHandler(key){
 document.addEventListener("DOMContentLoaded", function() {
   console.log("DOMContentLoaded");
   anitaPettigrew = new AnitaPettigrew(20, 20, "white", 20, 20);
-  pomeranian = new AnitaPettigrew(20, 20, "orange", 20, 20);
+  pomeranian = new AnitaPettigrew(100, 100, "orange", 20, 20);
   document.addEventListener("keydown", (event) => {
     console.log(event.code);
     keypressHandler(event.code);
