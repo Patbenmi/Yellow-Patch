@@ -22,13 +22,13 @@ console.log("Blue");
 
 let context = gameBoard.getContext("2d")
 
-function AnitaPettigrew() {
+function AnitaPettigrew(x, y, color, width, height) {
   this.win = false
-  this.x = 20
-  this.y = 20
-  this.color = "yellow"
-  this.width = 20
-  this.height = 20
+  this.x = x
+  this.y = y
+  this.color = color
+  this.width = width
+  this.height = height
   this.render = function () {
     context.fillStyle = this.color;
     context.fillRect(this.x, this.y, this.width, this.height);
@@ -56,7 +56,7 @@ let pomeranian = {
   height: 20,
   render: function() {
     context.fillStyle = this.color;
-    context.fillStyle = (this.x, this.y, this.width, this.height);
+    context.fillRect(this.x, this.y, this.width, this.height);
   }
 };
 
@@ -75,23 +75,33 @@ let gamePlay =() => {
 };
 
 
-function movementHandler(key){
+function keypressHandler(key){
   switch(key) {
-    case "ArrowUp": console.log("moveUp");
-    break
-    case "ArrowDown": console.log("moveDown");
-    break
-    case "ArrowLeft": console.log("moveLeft");
-    break
-    case "ArrowRight": console.log("moveRight");
+    case "ArrowUp": 
+      anitaPettigrew.y -= 5;
+      console.log("moveUp");
+      break
+    case "ArrowDown":
+      anitaPettigrew.y += 5;
+      console.log("moveDown");
+      break
+    case "ArrowLeft":
+      anitaPettigrew.x -= 5;
+      console.log("moveLeft");
+      break
+    case "ArrowRight":
+      anitaPettigrew.x += 5;
+      console.log("moveRight");
+      break
   }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
   console.log("DOMContentLoaded");
-  anitaPettigrew = new AnitaPettigrew();
+  anitaPettigrew = new AnitaPettigrew(20, 20, "white", 20, 20);
   document.addEventListener("keydown", (event) => {
     console.log(event.code);
+    keypressHandler(event.code);
   })
   gamePlay();
 });
