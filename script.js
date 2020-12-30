@@ -5,8 +5,8 @@ let gameBoard = document.getElementById("gameBoard");
 gameBoard.setAttribute('width', getComputedStyle(gameBoard)["width"]);
 gameBoard.setAttribute('height', getComputedStyle(gameBoard)["height"]);
 
-const urgentWords = ["STOP!!!", "GET OFF THE LAWN!!!", "DON'T DO THAT!!!", "WATCH THAT!!!", "NOT ON MY LAWN", "DAGNABBIT"];
-const urgentWords2 = ["WATCH THAT!!!", "NOT ON MY LAWN", "DAGNABBIT", "STOP!!!", "GET OFF THE LAWN!!!", "DON'T DO THAT!!!"];
+const urgentWords = ["STOP!!!", "GET OFF THE LAWN!!!", "DON'T DO THAT!!!", "WATCH THAT!!!", "NOT ON MY LAWN!!!", "DAGNABBIT!!!"];
+const urgentWords2 = ["WATCH THAT!!!", "NOT ON MY LAWN!!!", "DAGNABBIT!!!", "STOP!!!", "GET OFF THE LAWN!!!", "DON'T DO THAT!!!"];
 
 let flashingMessage1 = document.getElementById("urgent1");
 let flashingMessage2 = document.getElementById("urgent2");
@@ -47,14 +47,21 @@ function AnitaPettigrew(x, y, color, width, height) {
 //   }
 // };
 
+
+let changeWords =() => {
+  let i = Math.floor((Math.random() * 5));
+  setInterval(function (){flashingMessage1.innerText = urgentWords[i]; }, 3000); 
+  setInterval(function (){flashingMessage2.innerText = urgentWords2[i]; }, 2000);
+};
+
+setInterval(function () {changeWords(); }, 3000);
+
 let gamePlay =() => {
   context.clearRect(0,0, gameBoard.width, gameBoard.height);
   anitaPettigrew.render();
   pomeranian.render();
   urineCount.innerText = 0;
   scoreCount.innerText = 0;
-  flashingMessage1.innerText = urgentWords[i];
-  flashingMessage2.innerText = urgentWords2[i];
   // if (urineCount < 3){
 //     pomeranian.render();
     // console.log("Red");
@@ -93,5 +100,6 @@ document.addEventListener("DOMContentLoaded", function() {
     keypressHandler(event.code);
   })
   gamePlay();
+  changeWords();
 });
 

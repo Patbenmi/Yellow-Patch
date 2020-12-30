@@ -4,7 +4,8 @@
 } */
 body {
   /* padding-top: 1em; */
-  text-align: center;
+  font-family: 'Bangers', cursive;
+  justify-content: center;
   background-color: darkgreen;
   background-size: cover;
   background-repeat: no-repeat;
@@ -47,7 +48,13 @@ canvas {
 
 };
 #score {
-
+  position: relative;
+  text-align: center;
+  color: yellow;
+  width: 75px;
+  Top: 200px;
+  left: 30px;
+  border: 5px solid blue;
 };
 #urgent1 {
 
