@@ -44,8 +44,8 @@ let gamePlay =() => {
   context.clearRect(0,0, gameBoard.width, gameBoard.height);
   anitaPettigrew.render();
   pomeranian.render();
-  urineCount.innerText = 0;
-  scoreCount.innerText = 0;
+  urineCount.innerText = "Urine Count: " + 0;
+  scoreCount.innerText = "Dogs Removed: " + 0;
   // if (urineCount < 3){
 //     pomeranian.render();
     // console.log("Red");
