@@ -54,6 +54,6 @@ canvas {
   left: 50px;
 }
 #button {
-  position: fixed;
+  position: relative;
   margin-left: 42.5vw;
 }
