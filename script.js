@@ -15,8 +15,6 @@ let scoreCount = document.getElementById("score");
 
 let i = Math.floor((Math.random() * 5));
 
-// flashingmessage1.innertext = urgentWords[i];
-// flashingMessage2.innerText = urgentWords2[i];
 console.log("Blue");
 
 let context = gameBoard.getContext("2d")
@@ -33,20 +31,6 @@ function AnitaPettigrew(x, y, color, width, height) {
     context.fillRect(this.x, this.y, this.width, this.height);
   }
 };
-// let pomeranian = {
-//   urine: false,
-//   win: false,
-//   x: 20,
-//   y: 20,
-//   color: "orange",
-//   width: 20,
-//   height: 20,
-//   render: function() {
-//     context.fillStyle = this.color;
-//     context.fillRect(this.x, this.y, this.width, this.height);
-//   }
-// };
-
 
 let changeWords =() => {
   let i = Math.floor((Math.random() * 5));
@@ -90,11 +74,19 @@ function keypressHandler(key){
       break
   }
 }
+// function randomX() {
+//   Math.floor((Math.random() * 800));
+//   console.log(randomX());
+// };
+// function randomY() {
+//   Math.floor((Math.random() * 374));
+//   console.log(randomY);
+// };
 
 document.addEventListener("DOMContentLoaded", function() {
   console.log("DOMContentLoaded");
   anitaPettigrew = new AnitaPettigrew(20, 20, "white", 20, 20);
-  pomeranian = new AnitaPettigrew(100, 100, "orange", 20, 20);
+  pomeranian = new AnitaPettigrew(100, 150, "orange", 20, 20);
   document.addEventListener("keydown", (event) => {
     console.log(event.code);
     keypressHandler(event.code);
