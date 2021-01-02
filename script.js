@@ -1,9 +1,13 @@
-let anitaPettigrew;
+// let anitaPettigrew;
 
 let gameBoard = document.getElementById("gameBoard");
 
 gameBoard.setAttribute('width', getComputedStyle(gameBoard)["width"]);
 gameBoard.setAttribute('height', getComputedStyle(gameBoard)["height"]);
+let maxX = gameBoard.width
+// console.log(maxX);
+let maxY = gameBoard.height
+// console.log(maxY);
 
 const urgentWords = ["STOP!!!", "GET OFF THE LAWN!!!", "DON'T DO THAT!!!", "WATCH THAT!!!", "NOT ON MY LAWN!!!", "DAGNABBIT!!!"];
 const urgentWords2 = ["WATCH THAT!!!", "NOT ON MY LAWN!!!", "DAGNABBIT!!!", "STOP!!!", "GET OFF THE LAWN!!!", "DON'T DO THAT!!!"];
@@ -13,9 +17,7 @@ let flashingMessage2 = document.getElementById("urgent2");
 let urineCount = document.getElementById("urine");
 let scoreCount = document.getElementById("score");
 
-let i = Math.floor((Math.random() * 5));
-
-console.log("Blue");
+// console.log("Blue");
 
 let context = gameBoard.getContext("2d")
 
@@ -34,11 +36,11 @@ function AnitaPettigrew(x, y, color, width, height) {
 
 let changeWords =() => {
   let i = Math.floor((Math.random() * 5));
-  setInterval(function (){flashingMessage1.innerText = urgentWords[i]; }, 3000); 
+  setInterval(function (){flashingMessage1.innerText = urgentWords[i]; }, 2000); 
   setInterval(function (){flashingMessage2.innerText = urgentWords2[i]; }, 2000);
 };
 
-setInterval(function () {changeWords(); }, 3000);
+setInterval(function () {changeWords(); }, 4000);
 
 let gamePlay =() => {
   context.clearRect(0,0, gameBoard.width, gameBoard.height);
@@ -68,24 +70,26 @@ function keypressHandler(key){
       break
   };
 };
-// function randomX() {
-//   Math.floor((Math.random() * 800));
-//   console.log(randomX());
-// };
-// function randomY() {
-//   Math.floor((Math.random() * 374));
-//   console.log(randomY);
-// };
+function randomX() {
+  return Math.floor(Math.random() * (maxX - 20));
+};
+function randomY() {
+  return Math.floor(Math.random() * (maxY - 20));
+};
 
 document.addEventListener("DOMContentLoaded", function() {
-  console.log("DOMContentLoaded");
+  // console.log("DOMContentLoaded");
   anitaPettigrew = new AnitaPettigrew(20, 20, "white", 20, 20);
-  pomeranian = new AnitaPettigrew(100, 150, "orange", 20, 20);
+  let pomeranianX = randomX();
+  let pomeranianY = randomY();
+  pomeranian = new AnitaPettigrew(pomeranianX, pomeranianY, "orange", 20, 20);
+  // console.log(pomeranianX);
+  // console.log(pomeranianY);
   document.addEventListener("keydown", (event) => {
     console.log(event.code);
     keypressHandler(event.code);
-    console.log(anitaPettigrew.x);
-    console.log(anitaPettigrew.y);
+    // console.log(anitaPettigrew.x);
+//     console.log(anitaPettigrew.y);
     if(anitaPettigrew.y > gameBoard.height-20){
       anitaPettigrew.y = gameBoard.height-20;
     };
