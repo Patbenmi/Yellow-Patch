@@ -27,7 +27,7 @@ scoreCount.innerText = scoreTotal;
 
 let context = gameBoard.getContext("2d")
 
-function AnitaPettigrew(x, y, color, width, height) {
+function Creature(x, y, color, width, height) {
   this.win = false
   this.x = x
   this.y = y
@@ -40,20 +40,20 @@ function AnitaPettigrew(x, y, color, width, height) {
   }
 };
 
-let changeWords =() => {
+const changeWords = () => {
   let i = Math.floor((Math.random() * 5));
-  setInterval(function (){flashingMessage1.innerText = urgentWords[i]; }, 2000); 
-  setInterval(function (){flashingMessage2.innerText = urgentWords2[i]; }, 2000);
-};
+  flashingMessage1.innerText = urgentWords[i]; 
+  flashingMessage2.innerText = urgentWords2[i];
+}
 
-setInterval(function () {changeWords(); }, 4000);
+setInterval(changeWords, 2000);
 
-let gamePlay =() => {
+const gamePlay = () => {
   context.clearRect(0,0, gameBoard.width, gameBoard.height);
   anitaPettigrew.render();
-  pomeranian.render();
   window.requestAnimationFrame(gamePlay)
-};
+}
+
 function keypressHandler(key){
   switch(key) {
     case "KeyH": 
@@ -73,30 +73,46 @@ function keypressHandler(key){
       console.log("moveRight");
       break
   };
-};
+}
+
 function randomX() {
   return Math.floor(Math.random() * (maxX - 20));
-};
+}
+
 function randomY() {
   return Math.floor(Math.random() * (maxY - 20));
+}
+
+const dogs = []
+
+function generateDog () {
+  let pomeranianX = randomX();
+  let pomeranianY = randomY();
+  const pom = new Creature(pomeranianX, pomeranianY, "orange", 20, 20);
+  pom.render();
+  dogs.push(pom);
+  console.log(dogs);
+  console.log(pomeranianX);
+  console.log(pomeranianY);
+  dogPee()
 };
 
 function dogPee() {
-  setTimeout(function() {(pomeranian.color = "yellow"); }, 11000);
-  // let urineTotal = urineTotal + 1;
-  // urineCount.innerText = urineTotal;
-};
+  setTimeout(function() {
+    console.log(pomeranian);
+    pomeranian.color = "yellow"; 
+    urineTotal = urineTotal + 1;
+    urineCount.innerText = urineTotal;
+    generateDog();
+  }, 5000);
+}
 
 function gameStart() {
-  document.addEventListener("DOMContentLoaded", function() {
-    console.log("DOMContentLoaded");
-    anitaPettigrew = new AnitaPettigrew(20, 20, "white", 20, 20);
-    let pomeranianX = randomX();
-    let pomeranianY = randomY();
-    pomeranian = new AnitaPettigrew(pomeranianX, pomeranianY, "orange", 20, 20);
-    dogPee();
-    console.log(pomeranianX);
-    console.log(pomeranianY);
+  // document.addEventListener("DOMContentLoaded", function() {
+    // console.log("DOMContentLoaded");
+    anitaPettigrew = new Creature(20, 20, "white", 20, 20);
+    generateDog();
+    // dogPee();
     document.addEventListener("keydown", (event) => {
       console.log(event.code);
       keypressHandler(event.code);
@@ -116,8 +132,8 @@ function gameStart() {
       };
     })
     gamePlay();
-    changeWords();
-    }
-  )
+    // changeWords();
+    // }
+  // )
 };
 gameStart();
