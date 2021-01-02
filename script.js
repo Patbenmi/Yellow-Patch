@@ -1,4 +1,5 @@
 // let anitaPettigrew;
+let resetButton = document.getElementById("reset");
 
 let gameBoard = document.getElementById("gameBoard");
 
@@ -9,6 +10,7 @@ let maxX = gameBoard.width
 let maxY = gameBoard.height
 // console.log(maxY);
 
+
 const urgentWords = ["STOP!!!", "GET OFF THE LAWN!!!", "DON'T DO THAT!!!", "WATCH THAT!!!", "NOT ON MY LAWN!!!", "DAGNABBIT!!!"];
 const urgentWords2 = ["WATCH THAT!!!", "NOT ON MY LAWN!!!", "DAGNABBIT!!!", "STOP!!!", "GET OFF THE LAWN!!!", "DON'T DO THAT!!!"];
 
@@ -16,6 +18,10 @@ let flashingMessage1 = document.getElementById("urgent1");
 let flashingMessage2 = document.getElementById("urgent2");
 let urineCount = document.getElementById("urine");
 let scoreCount = document.getElementById("score");
+let urineTotal = 0;
+urineCount.innerText = urineTotal;
+let scoreTotal = 0;
+scoreCount.innerText = scoreTotal;
 
 // console.log("Blue");
 
@@ -46,8 +52,6 @@ let gamePlay =() => {
   context.clearRect(0,0, gameBoard.width, gameBoard.height);
   anitaPettigrew.render();
   pomeranian.render();
-  urineCount.innerText = "Urine Count: " + 0;
-  scoreCount.innerText = "Dogs Removed: " + 0;
   window.requestAnimationFrame(gamePlay)
 };
 function keypressHandler(key){
@@ -77,32 +81,43 @@ function randomY() {
   return Math.floor(Math.random() * (maxY - 20));
 };
 
-document.addEventListener("DOMContentLoaded", function() {
-  // console.log("DOMContentLoaded");
-  anitaPettigrew = new AnitaPettigrew(20, 20, "white", 20, 20);
-  let pomeranianX = randomX();
-  let pomeranianY = randomY();
-  pomeranian = new AnitaPettigrew(pomeranianX, pomeranianY, "orange", 20, 20);
-  // console.log(pomeranianX);
-  // console.log(pomeranianY);
-  document.addEventListener("keydown", (event) => {
-    console.log(event.code);
-    keypressHandler(event.code);
-    // console.log(anitaPettigrew.x);
-//     console.log(anitaPettigrew.y);
-    if(anitaPettigrew.y > gameBoard.height-20){
-      anitaPettigrew.y = gameBoard.height-20;
-    };
-    if(anitaPettigrew.y < 0) {
-      anitaPettigrew.y = 0;
-    };
-    if(anitaPettigrew.x > gameBoard.width-20) {
-      anitaPettigrew.x = gameBoard.width-20;
-    };
-    if(anitaPettigrew.x < 0) {
-      anitaPettigrew.x = 0;
-    };
-  })
-  gamePlay();
-  changeWords();
-});
+function dogPee() {
+  setTimeout(function() {(pomeranian.color = "yellow"); }, 11000);
+  // let urineTotal = urineTotal + 1;
+  // urineCount.innerText = urineTotal;
+};
+
+function gameStart() {
+  document.addEventListener("DOMContentLoaded", function() {
+    console.log("DOMContentLoaded");
+    anitaPettigrew = new AnitaPettigrew(20, 20, "white", 20, 20);
+    let pomeranianX = randomX();
+    let pomeranianY = randomY();
+    pomeranian = new AnitaPettigrew(pomeranianX, pomeranianY, "orange", 20, 20);
+    dogPee();
+    console.log(pomeranianX);
+    console.log(pomeranianY);
+    document.addEventListener("keydown", (event) => {
+      console.log(event.code);
+      keypressHandler(event.code);
+      console.log(anitaPettigrew.x);
+      console.log(anitaPettigrew.y);
+      if(anitaPettigrew.y > gameBoard.height-20){
+        anitaPettigrew.y = gameBoard.height-20;
+      };
+      if(anitaPettigrew.y < 0) {
+        anitaPettigrew.y = 0;
+      };
+      if(anitaPettigrew.x > gameBoard.width-20) {
+        anitaPettigrew.x = gameBoard.width-20;
+      };
+      if(anitaPettigrew.x < 0) {
+        anitaPettigrew.x = 0;
+      };
+    })
+    gamePlay();
+    changeWords();
+    }
+  )
+};
+gameStart();
