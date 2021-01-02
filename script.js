@@ -46,34 +46,28 @@ let gamePlay =() => {
   pomeranian.render();
   urineCount.innerText = "Urine Count: " + 0;
   scoreCount.innerText = "Dogs Removed: " + 0;
-  // if (urineCount < 3){
-//     pomeranian.render();
-    // console.log("Red");
-  // }
   window.requestAnimationFrame(gamePlay)
 };
-
-
 function keypressHandler(key){
   switch(key) {
-    case "ArrowUp": 
+    case "KeyH": 
       anitaPettigrew.y -= 5;
       console.log("moveUp");
       break
-    case "ArrowDown":
+    case "KeyN":
       anitaPettigrew.y += 5;
       console.log("moveDown");
       break
-    case "ArrowLeft":
+    case "KeyB":
       anitaPettigrew.x -= 5;
       console.log("moveLeft");
       break
-    case "ArrowRight":
+    case "KeyM":
       anitaPettigrew.x += 5;
       console.log("moveRight");
       break
-  }
-}
+  };
+};
 // function randomX() {
 //   Math.floor((Math.random() * 800));
 //   console.log(randomX());
