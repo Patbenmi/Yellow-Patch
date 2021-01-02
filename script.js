@@ -51,19 +51,19 @@ let gamePlay =() => {
 function keypressHandler(key){
   switch(key) {
     case "KeyH": 
-      anitaPettigrew.y -= 5;
+      anitaPettigrew.y -= 15;
       console.log("moveUp");
       break
     case "KeyN":
-      anitaPettigrew.y += 5;
+      anitaPettigrew.y += 15;
       console.log("moveDown");
       break
     case "KeyB":
-      anitaPettigrew.x -= 5;
+      anitaPettigrew.x -= 15;
       console.log("moveLeft");
       break
     case "KeyM":
-      anitaPettigrew.x += 5;
+      anitaPettigrew.x += 15;
       console.log("moveRight");
       break
   };
@@ -84,8 +84,21 @@ document.addEventListener("DOMContentLoaded", function() {
   document.addEventListener("keydown", (event) => {
     console.log(event.code);
     keypressHandler(event.code);
+    console.log(anitaPettigrew.x);
+    console.log(anitaPettigrew.y);
+    if(anitaPettigrew.y > gameBoard.height-20){
+      anitaPettigrew.y = gameBoard.height-20;
+    };
+    if(anitaPettigrew.y < 0) {
+      anitaPettigrew.y = 0;
+    };
+    if(anitaPettigrew.x > gameBoard.width-20) {
+      anitaPettigrew.x = gameBoard.width-20;
+    };
+    if(anitaPettigrew.x < 0) {
+      anitaPettigrew.x = 0;
+    };
   })
   gamePlay();
   changeWords();
 });
-
