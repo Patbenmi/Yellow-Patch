@@ -83,8 +83,9 @@ function keypressHandler(key) {
         anitaPettigrew.y < dog.y + dog.height &&
         anitaPettigrew.y + anitaPettigrew.height > dog.y && dog.color === "orange") {
         dogs.pop();
-        scoreTotal++
+        scoreTotal++;
         scoreCount.innerText = scoreTotal;
+        urineTotal = urineTotal - 1;
       }
   };
 }
@@ -113,7 +114,7 @@ function dogPee(pom) {
   setTimeout(function () {
     console.log(pom);
     pom.color = "yellow";
-    urineTotal = urineTotal + 1;
+    urineTotal++;
     urineCount.innerText = urineTotal;
     generateDog();
   }, 10000);
@@ -129,9 +130,6 @@ function gameStart() {
   generateDog();
   // dogPee();
   gamePlay();
-  // changeWords();
-  // }
-  // )
 }
 
 document.addEventListener("keydown", (event) => {
