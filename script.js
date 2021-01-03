@@ -49,26 +49,23 @@ const gamePlay = () => {
   dogs.forEach(dog => {
     dog.render();
   });
-  window.requestAnimationFrame(gamePlay)
+  winCondition();
+  window.requestAnimationFrame(gamePlay);
 }
 
 function keypressHandler(key) {
   switch (key) {
     case "ArrowUp":
       anitaPettigrew.y -= 15;
-      // console.log("moveUp");
       break
     case "ArrowDown":
       anitaPettigrew.y += 15;
-      // console.log("moveDown");
       break
     case "ArrowLeft":
       anitaPettigrew.x -= 15;
-      // console.log("moveLeft");
       break
     case "ArrowRight":
       anitaPettigrew.x += 15;
-      // console.log("moveRight");
       break
     case "Space":
       const dog = dogs[dogs.length - 1]
@@ -98,20 +95,24 @@ function generateDog() {
   const pom = new Creature(pomeranianX, pomeranianY, "orange", 20, 20);
   dogs.push(pom);
   pom.render();
-  // console.log(dogs);
-  // console.log(pomeranianX);
-  // console.log(pomeranianY);
   dogPee(pom);
 }
 
 function dogPee(pom) {
   setTimeout(function () {
-    // console.log(pom);
     pom.color = "yellow";
     urineTotal++;
     urineCount.innerText = urineTotal;
     generateDog();
   }, 10000);
+}
+
+function winCondition() {
+  if (urineTotal === 3) {
+    console.log("You've lost!!!");
+  } else if (scoreTotal === 10) {
+    console.log("You've won!");
+  }
 }
 
 function gameStart() {
@@ -125,10 +126,7 @@ function gameStart() {
 
 document.addEventListener("keydown", (event) => {
   event.preventDefault();
-  // console.log(event.code);
   keypressHandler(event.code);
-  // console.log(anitaPettigrew.x);
-  // console.log(anitaPettigrew.y);
   if (anitaPettigrew.y > gameBoard.height - 20) {
     anitaPettigrew.y = gameBoard.height - 20;
   };
