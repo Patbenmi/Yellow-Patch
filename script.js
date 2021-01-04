@@ -31,7 +31,9 @@ function Creature(x, y, color, width, height) {
   this.color = color
   this.width = width
   this.height = height
+  // this.image = image // embeded code for future image development.
   this.render = function () {
+    // context.drawImage(this.image, this.x, this.y) // embeded code for future image development.
     context.fillStyle = this.color;
     context.fillRect(this.x, this.y, this.width, this.height);
   }
@@ -73,15 +75,19 @@ function keypressHandler(key) {
   switch (key) {
     case "ArrowUp":
       anitaPettigrew.y -= 15;
+      console.log(key);
       break
     case "ArrowDown":
       anitaPettigrew.y += 15;
+      console.log(key);
       break
     case "ArrowLeft":
       anitaPettigrew.x -= 15;
+      console.log(key);
       break
     case "ArrowRight":
       anitaPettigrew.x += 15;
+      console.log(key);
       break
     case "Space":
       const dog = dogs[dogs.length - 1]
@@ -164,14 +170,14 @@ function gameStart() {
 document.addEventListener("keydown", (event) => {
   event.preventDefault();
   keypressHandler(event.code);
-  if (anitaPettigrew.y > gameBoard.height - 20) {
-    anitaPettigrew.y = gameBoard.height - 20;
+  if (anitaPettigrew.y > gameBoard.height - anitaPettigrew.height) {
+    anitaPettigrew.y = gameBoard.height - anitaPettigrew.height;
   };
   if (anitaPettigrew.y < 0) {
     anitaPettigrew.y = 0;
   };
-  if (anitaPettigrew.x > gameBoard.width - 20) {
-    anitaPettigrew.x = gameBoard.width - 20;
+  if (anitaPettigrew.x > gameBoard.width - anitaPettigrew.width) {
+    anitaPettigrew.x = gameBoard.width - anitaPettigrew.width;
   };
   if (anitaPettigrew.x < 0) {
     anitaPettigrew.x = 0;
