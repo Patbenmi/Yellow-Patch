@@ -42,25 +42,25 @@ canvas {
   position: fixed;
   left: 50px;
   background-color: black;
-  font-size: 25px;
+  font-size: 100px;
 }
 #urgent2 {
   position: fixed;
   right: 50px;
   background-color: black;
-  font-size: 25px;
+  font-size: 100px;
 }
 #urine {
   position: fixed;
   right: 50px;
   background-color: black;
-  font-size: 25px;
+  font-size: 100px;
 }
 #urgent1 {
   position: fixed;
   left: 50px;
   background-color: black;
-  font-size: 25px;
+  font-size: 100px;
 }
 #button {
   position: relative;

@@ -1,7 +1,6 @@
 body {
   text-align: center;
   background-image: url("./Grass.jpg");
-  background-color: darkgreen;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100vw;
@@ -10,12 +9,13 @@ body {
 h1, h2 {
   text-align: center;
   font-family: 'Bangers', cursive;
-  /* background-color: chartreuse; */
   color: black;
 }
 h1 {
-  font-size: 75px;
+  font-size: 250px;
+  background-color: yellow;
 }
 h2 {
+  font-size: 75px;
   background-color: darkolivegreen;
 }

@@ -1,5 +1,5 @@
 let resetButton = document.getElementById("reset");
-
+let gameStatus = document.getElementById("gameStatus")
 let gameBoard = document.getElementById("gameBoard");
 
 gameBoard.setAttribute('width', getComputedStyle(gameBoard)["width"]);
@@ -53,6 +53,19 @@ const gamePlay = () => {
     });
     window.requestAnimationFrame(gamePlay)
 }
+function gameStatusChange() {
+  if(urineTotal === 1 && scoreTotal < 5) {
+    gameStatus.innerText = "YOU'RE LOSING!!!";
+  } else if(urineTotal === 2 && scoreTotal < 5){
+    gameStatus.innerText = "YOU'RE ABOUT TO LOSE!!!"
+  } else if(scoreTotal >= 5 && scoreTotal <= 7) {
+    gameStatus.innerText = "YOU'RE WINNING!!!";
+  } else if(scoreTotal >= 8 && scoreTotal <=10){
+    gameStatus.innerText = "ALMOST THERE!!!";
+  } else if(scoreTotal === 10){
+    gameStatus.innerText = "YOU WON!!!"
+  };
+}
 
 function keypressHandler(key) {
   switch (key) {
@@ -79,6 +92,7 @@ function keypressHandler(key) {
         scoreTotal++;
         scoreCount.innerText = scoreTotal;
         urineTotal = urineTotal - 1;
+        gameStatusChange();
       }
   };
 }
@@ -92,6 +106,7 @@ function randomY() {
 }
 
 function generateDog() {
+  gameStatusChange();
   winCondition();
   if(lossToDog === false && winAgainstDog === false) {
     let pomeranianX = randomX();
@@ -108,6 +123,7 @@ function dogPee(pom) {
     pom.color = "yellow";
     urineTotal++;
     urineCount.innerText = urineTotal;
+    gameStatusChange();
     generateDog();
   }, 10000);
   if(lossToDog === true || winAgainstDog === true) {
@@ -115,17 +131,25 @@ function dogPee(pom) {
   };
 }
 
+function winPage() {
+  location.replace("./win.html");
+}
+
+function losePage() {
+  location.replace("./lose.html");
+}
+
 function winCondition() {
   if (urineTotal === 3) {
     console.log("You've lost!!!");
     lossToDog = true;
     console.log(lossToDog);
-
+    losePage();
   } else if (scoreTotal === 10) {
     console.log("You've won!");
     winAgainstDog = true;
     console.log(winAgainstDog);
-    
+    winPage();
   };
 }
 
