@@ -18,7 +18,9 @@ let urineTotal = 0;
 urineCount.innerText = urineTotal;
 let scoreTotal = 0;
 scoreCount.innerText = scoreTotal;
-const dogs = []
+const dogs = [];
+let lossToDog = false;
+let winAgainstDog = false;
 
 let context = gameBoard.getContext("2d")
 
@@ -44,13 +46,12 @@ const changeWords = () => {
 setInterval(changeWords, 2000);
 
 const gamePlay = () => {
-  context.clearRect(0, 0, gameBoard.width, gameBoard.height);
-  anitaPettigrew.render();
-  dogs.forEach(dog => {
-    dog.render();
-  });
-  winCondition();
-  window.requestAnimationFrame(gamePlay);
+    context.clearRect(0, 0, gameBoard.width, gameBoard.height);
+    anitaPettigrew.render();
+    dogs.forEach(dog => {
+      dog.render();
+    });
+    window.requestAnimationFrame(gamePlay);
 }
 
 function keypressHandler(key) {
@@ -69,6 +70,7 @@ function keypressHandler(key) {
       break
     case "Space":
       const dog = dogs[dogs.length - 1]
+      console.log(dog)
       if (anitaPettigrew.x + anitaPettigrew.width > dog.x &&
         anitaPettigrew.x < dog.x + dog.width &&
         anitaPettigrew.y < dog.y + dog.height &&
@@ -90,29 +92,37 @@ function randomY() {
 }
 
 function generateDog() {
-  let pomeranianX = randomX();
-  let pomeranianY = randomY();
-  const pom = new Creature(pomeranianX, pomeranianY, "orange", 20, 20);
-  dogs.push(pom);
-  pom.render();
-  dogPee(pom);
+  winCondition();
+  if(lossToDog === false && winAgainstDog === false) {
+    let pomeranianX = randomX();
+    let pomeranianY = randomY();
+    const pom = new Creature(pomeranianX, pomeranianY, "orange", 20, 20);
+    dogs.push(pom);
+    pom.render();
+    dogPee(pom);
 }
 
 function dogPee(pom) {
-  setTimeout(function () {
+  let timeOut = setTimeout(function () {
     pom.color = "yellow";
     urineTotal++;
     urineCount.innerText = urineTotal;
     generateDog();
   }, 10000);
+  if(lossToDog === true || winAgainstDog === true) {
+    clearTimeout(timeOut);
+  };
 }
 
 function winCondition() {
-  if (urineTotal === 3) {
+  if (urineTotal === 1) {
     console.log("You've lost!!!");
-  } else if (scoreTotal === 10) {
+    lossToDog = true;
+    console.log(lossToDog);
+  } else if (scoreTotal === 1) {
     console.log("You've won!");
-  }
+    winAgainstDog = true;
+  };
 }
 
 function gameStart() {
