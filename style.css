@@ -41,26 +41,26 @@ canvas {
 #score {
   position: fixed;
   left: 50px;
-  background-color: black;
-  font-size: 100px;
+  background-color: darkolivegreen;
+  font-size: 50px;
 }
 #urgent2 {
   position: fixed;
   right: 50px;
-  background-color: black;
-  font-size: 65px;
+  background-color: darkolivegreen;
+  font-size: 50px;
 }
 #urine {
   position: fixed;
   right: 50px;
-  background-color: black;
-  font-size: 100px;
+  background-color: darkolivegreen;
+  font-size: 50px;
 }
 #urgent1 {
   position: fixed;
   left: 50px;
-  background-color: black;
-  font-size: 65px;
+  background-color: darkolivegreen;
+  font-size: 50px;
 }
 #button {
   position: relative;
