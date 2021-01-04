@@ -12,10 +12,12 @@ h1, h2 {
   color: black;
 }
 h1 {
-  font-size: 250px;
+  font-size: 200px;
   background-color: yellow;
+  margin: 30px 290px 30px 290px;
 }
 h2 {
-  font-size: 75px;
+  font-size: 70px;
   background-color: darkolivegreen;
+  margin: 30px 200px 30px 200px;
 }

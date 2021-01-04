@@ -9,13 +9,17 @@ body {
 h1, h2 {
   text-align: center;
   font-family: 'Bangers', cursive;
-  color: black;
+
 }
 h1 {
-  font-size: 125px;
+  font-size: 110px;
   background-color: yellow;
+  margin: 30px 430px 30px 450px;
+  color: black;
 }
 h2 {
-  font-size: 50px;
+  font-size: 33px;
   background-color: darkolivegreen;
+  margin: 30px 250px 30px 250px;
+  color: yellow;
 }

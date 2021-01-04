@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background-image: url("./Grass.jpg");
+  background-image: url("./badgrass.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100vw;
@@ -12,10 +12,12 @@ h1, h2 {
   color: black;
 }
 h1 {
-  font-size: 250px;
+  font-size: 200px;
   background-color: yellow;
+  margin: 30px 250px 30px 250px;
 }
 h2 {
-  font-size: 75px;
+  font-size: 70px;
   background-color: darkolivegreen;
+  margin: 30px 200px 30px 200px;
 }

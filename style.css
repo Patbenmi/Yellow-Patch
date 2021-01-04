@@ -39,25 +39,27 @@ canvas {
   grid-area: playArea;
 }
 #score {
-  position: fixed;
+  position: absolute;
+  top: 225px;
   left: 50px;
   background-color: darkolivegreen;
   font-size: 50px;
 }
 #urgent2 {
-  position: fixed;
+  position: absolute;
+  top: 225px;
   right: 50px;
   background-color: darkolivegreen;
   font-size: 50px;
 }
 #urine {
-  position: fixed;
+  position: absolute;
   right: 50px;
   background-color: darkolivegreen;
   font-size: 50px;
 }
 #urgent1 {
-  position: fixed;
+  position: absolute;
   left: 50px;
   background-color: darkolivegreen;
   font-size: 50px;
