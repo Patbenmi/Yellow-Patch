@@ -51,7 +51,7 @@ const gamePlay = () => {
     dogs.forEach(dog => {
       dog.render();
     });
-    window.requestAnimationFrame(gamePlay);
+    window.requestAnimationFrame(gamePlay)
 }
 
 function keypressHandler(key) {
@@ -100,6 +100,7 @@ function generateDog() {
     dogs.push(pom);
     pom.render();
     dogPee(pom);
+  };
 }
 
 function dogPee(pom) {
