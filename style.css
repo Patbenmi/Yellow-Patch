@@ -2,7 +2,7 @@ body {
   background-image: url("./walk.jpg");
   color: yellow;
   font-family: 'Bangers', cursive;
-  background-color: darkgreen;
+  /* background-color: darkgreen; */
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -11,7 +11,7 @@ body {
 h1 {
   display: fixed;
   font-family: 'Bangers', cursive;
-  color:yellow;
+  color: yellow;
   font-size: 125px;
   text-align: center;
 }
@@ -23,7 +23,7 @@ canvas {
 }
 #gameScreen {
   max-width: 50em;
-  background-color: cornflowerblue;
+  background-color: darkolivegreen;
   margin: auto;
   padding: 1em;
   display: grid;
@@ -34,24 +34,33 @@ canvas {
                        "playArea playArea playArea"
                        "playArea playArea playArea"
 }
+
 #playArea {
   grid-area: playArea;
 }
 #score {
   position: fixed;
   left: 50px;
+  background-color: black;
+  font-size: 25px;
 }
 #urgent2 {
   position: fixed;
   right: 50px;
+  background-color: black;
+  font-size: 25px;
 }
 #urine {
   position: fixed;
   right: 50px;
+  background-color: black;
+  font-size: 25px;
 }
 #urgent1 {
   position: fixed;
   left: 50px;
+  background-color: black;
+  font-size: 25px;
 }
 #button {
   position: relative;

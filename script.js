@@ -124,7 +124,8 @@ function winCondition() {
   } else if (scoreTotal === 10) {
     console.log("You've won!");
     winAgainstDog = true;
-
+    console.log(winAgainstDog);
+    
   };
 }
 
