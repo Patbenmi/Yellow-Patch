@@ -48,7 +48,7 @@ canvas {
   position: fixed;
   right: 50px;
   background-color: black;
-  font-size: 100px;
+  font-size: 65px;
 }
 #urine {
   position: fixed;
@@ -60,7 +60,7 @@ canvas {
   position: fixed;
   left: 50px;
   background-color: black;
-  font-size: 100px;
+  font-size: 65px;
 }
 #button {
   position: relative;

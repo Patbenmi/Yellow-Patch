@@ -56,6 +56,8 @@ const gamePlay = () => {
 function gameStatusChange() {
   if(urineTotal === 1 && scoreTotal < 5) {
     gameStatus.innerText = "YOU'RE LOSING!!!";
+  } else if(urineTotal <= 2 && (scoreTotal >= 3 && scoreTotal < 5)) {
+    gameStatus.innerText = "I'm nervous...";
   } else if(urineTotal === 2 && scoreTotal < 5){
     gameStatus.innerText = "YOU'RE ABOUT TO LOSE!!!"
   } else if(scoreTotal >= 5 && scoreTotal <= 7) {
@@ -83,7 +85,6 @@ function keypressHandler(key) {
       break
     case "Space":
       const dog = dogs[dogs.length - 1]
-      console.log(dog)
       if (anitaPettigrew.x + anitaPettigrew.width > dog.x &&
         anitaPettigrew.x < dog.x + dog.width &&
         anitaPettigrew.y < dog.y + dog.height &&
@@ -121,11 +122,11 @@ function generateDog() {
 function dogPee(pom) {
   let timeOut = setTimeout(function () {
     pom.color = "yellow";
-    urineTotal++;
     urineCount.innerText = urineTotal;
     gameStatusChange();
     generateDog();
   }, 10000);
+  urineTotal++;
   if(lossToDog === true || winAgainstDog === true) {
     clearTimeout(timeOut);
   };
@@ -143,12 +144,10 @@ function winCondition() {
   if (urineTotal === 3) {
     console.log("You've lost!!!");
     lossToDog = true;
-    console.log(lossToDog);
     losePage();
   } else if (scoreTotal === 10) {
     console.log("You've won!");
     winAgainstDog = true;
-    console.log(winAgainstDog);
     winPage();
   };
 }
