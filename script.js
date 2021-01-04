@@ -24,7 +24,7 @@ let winAgainstDog = false;
 
 let context = gameBoard.getContext("2d")
 
-function Creature(x, y, color, width, height) {
+function Creature(x, y, color, width, height,) { //readd image when updating image files.
   this.win = false
   this.x = x
   this.y = y
