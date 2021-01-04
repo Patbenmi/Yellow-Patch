@@ -116,13 +116,15 @@ function dogPee(pom) {
 }
 
 function winCondition() {
-  if (urineTotal === 1) {
+  if (urineTotal === 3) {
     console.log("You've lost!!!");
     lossToDog = true;
     console.log(lossToDog);
-  } else if (scoreTotal === 1) {
+
+  } else if (scoreTotal === 10) {
     console.log("You've won!");
     winAgainstDog = true;
+
   };
 }
 

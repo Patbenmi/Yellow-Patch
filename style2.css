@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background-image: url("./walk.jpg");
+  background-image: url("./Grass.jpg");
   background-color: darkgreen;
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,5 +17,5 @@ h1 {
   font-size: 75px;
 }
 h2 {
-  background-image: url("./Grass.jpg");
+  background-color: darkolivegreen;
 }
