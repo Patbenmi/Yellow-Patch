@@ -1,8 +1,10 @@
 # Yellow Patch - The Battle of Our Lawns
 
 ## Premise:
+The name of this application is Yellow Patch. I decided to create this after being presenting with perameters of a project that required a fully-operational interactive game. This project, the first major assignment in my course, was issued in order to display successful attainment of the necessary skills covered in Unit 1 - HTML, CSS & JavaScript.
 
-name of the game, why you're building, link to the live version
+Here is a link to the live version of this project -  -----------
+
 
 ## Prep Materials
 user stories, wireframes
@@ -23,4 +25,4 @@ My stretch goals are as follows:
 
 
 ## Credits
-Thank you, Google, for without your lovely image search option I would have no images of grass.
+Thank you, Google, for without your lovely image search option I would have no images of grass. Also, shoutouts to W3schools and MDN because, having created this application over a holiday break, my instructors were not readily available. Those resources worked wonders concerning functions embedded in JavaScript.
