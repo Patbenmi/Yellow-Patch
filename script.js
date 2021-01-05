@@ -91,10 +91,10 @@ function keypressHandler(key) {
       break
     case "Space":
       const dog = dogs[dogs.length - 1]
-      if (anitaPettigrew.x + anitaPettigrew.width > dog.x &&
-        anitaPettigrew.x < dog.x + dog.width &&
-        anitaPettigrew.y < dog.y + dog.height &&
-        anitaPettigrew.y + anitaPettigrew.height > dog.y && dog.color === "orange") {
+      if (anitaPettigrew.x + anitaPettigrew.width >= dog.x &&
+        anitaPettigrew.x <= dog.x + dog.width &&
+        anitaPettigrew.y <= dog.y + dog.height &&
+        anitaPettigrew.y + anitaPettigrew.height >= dog.y && dog.color === "orange") {
         dogs.pop();
         scoreTotal++;
         scoreCount.innerText = scoreTotal;
