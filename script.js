@@ -113,8 +113,6 @@ function keypressHandler(key) {
         dogs.pop();
         scoreTotal++;
         scoreCount.innerText = scoreTotal;
-        // urineTotal = urineTotal - 1;
-        // gameStatusChange();
         generateDog();
       }
   };
@@ -137,21 +135,7 @@ function generateDog() {
     const pom = new Creature(pomeranianX, pomeranianY, "orange", 20, 20, true);
     dogs.push(pom);
     pom.render();
-    // dogPee(pom);
   };
-}
-
-function dogPee(pom) {
-  // let timeOut = setTimeout(function () {
-  //   pom.color = "yellow";
-  //   urineTotal++;
-  //   urineCount.innerText = urineTotal;
-  //   gameStatusChange();
-  //   generateDog();
-  // }, 10000);
-  // if(lossToDog === true || winAgainstDog === true) {
-  //   clearTimeout(timeOut);
-  // };
 }
 
 function winPage() {
