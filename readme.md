@@ -13,8 +13,7 @@ But what subject should I cover? What skin to put my game in. Then I thought abo
 That's when it hit me: *whenever I walk my dog, I purposefully avoided her lawn. Why not create a game that documented her struggles with the neighborhood dogs?* Most of the dogs in the neighborhood small toy-sized dogs, with a significant portion of them being Pomeranians. The game simply came together.
 
 ## Approach
-In the beginning, I wanted everything to generate in one page. I quickly found that abhorrent.
-
+In the beginning, I wanted everything to generate in one page. I quickly found that abhorrent. so I decided to create several pages - an introduction page, a game page, and a win & lose page. To be honest, my project is a bunch of DOM manipulator functions and conditional statements. Embedded functions are something that I feel that I've become better at understanding and utilizing. 
 
 ## Outstanding Bugs that need to be fixed
 Currently there is a lag in the code between when the winning number is acheived and when the win function is implemented. That is something that I want to work on but, at current, I am unable to figure out on my own.
