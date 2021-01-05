@@ -5,9 +5,12 @@ The name of this application is Yellow Patch. I decided to create this after bei
 
 Here is a link to the live version of this project -  -----------
 
-
 ## Prep Materials
-user stories, wireframes
+So, when originally presented with the project outline, I was amiss. I could not figure out what kind of game I would create and I didn't know what subject to have it cover. One of the last things that my cohort covered in class before break was Canvas, which I immediately felt would be the medium for me to utilize. At the time I was fairly comfortable with both flex and grid but I decided that grid should be used.
+
+But what subject should I cover? What skin to put my game in. Then I thought about my lovely former neighbor and current grandmother, Anita Pettigrew. Anita is always in her lawn, weather-permitting, and had the most manicured lawn in the neighborhood. Her lawn is sodded with a regionally-appropriate native grass, unlike others who had their lawns resodded with types of grass native to the eastern, wetter regions of the United States. 
+
+That's when it hit me: *whenever I walk my dog, I purposefully avoided her lawn. Why not create a game that documented her struggles with the neighborhood dogs?* Most of the dogs in the neighborhood small toy-sized dogs, with a significant portion of them being Pomeranians. The game simply came together.
 
 ## Approach
 a bit about your development process and planning strategies
