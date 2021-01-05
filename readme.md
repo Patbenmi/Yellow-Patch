@@ -13,7 +13,7 @@ But what subject should I cover? What skin to put my game in. Then I thought abo
 That's when it hit me: *whenever I walk my dog, I purposefully avoided her lawn. Why not create a game that documented her struggles with the neighborhood dogs?* Most of the dogs in the neighborhood small toy-sized dogs, with a significant portion of them being Pomeranians. The game simply came together.
 
 ## Approach
-a bit about your development process and planning strategies
+In the beginning, I wanted everything to generate in one page. I quickly found that abhorrent.
 
 
 ## Outstanding Bugs that need to be fixed

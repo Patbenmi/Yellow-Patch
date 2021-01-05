@@ -21,10 +21,11 @@ scoreCount.innerText = scoreTotal;
 const dogs = [];
 let lossToDog = false;
 let winAgainstDog = false;
+let gameOver = false;
 
 let context = gameBoard.getContext("2d")
 
-function Creature(x, y, color, width, height,) { //readd image when updating image files.
+function Creature(x, y, color, width, height, isDog) { //readd image when updating image files.
   this.win = false
   this.x = x
   this.y = y
@@ -37,6 +38,19 @@ function Creature(x, y, color, width, height,) { //readd image when updating ima
     context.fillStyle = this.color;
     context.fillRect(this.x, this.y, this.width, this.height);
   }
+  if (isDog) {
+    this.timeOut = setTimeout( ()=> {  // this function wouldn't work without arrow as it is a callback funtion.
+      this.color = "yellow";
+      urineTotal++;
+      urineCount.innerText = urineTotal;
+      gameStatusChange();
+      generateDog();
+    }, 10000);
+
+    this.clearTimer = () => {
+      clearTimeout(this.timeOut)
+    }
+  }
 }
 
 const changeWords = () => {
@@ -48,25 +62,25 @@ const changeWords = () => {
 setInterval(changeWords, 2000);
 
 const gamePlay = () => {
-    context.clearRect(0, 0, gameBoard.width, gameBoard.height);
-    anitaPettigrew.render();
-    dogs.forEach(dog => {
-      dog.render();
-    });
-    window.requestAnimationFrame(gamePlay)
+  context.clearRect(0, 0, gameBoard.width, gameBoard.height);
+  anitaPettigrew.render();
+  dogs.forEach(dog => {
+    dog.render();
+  });
+  window.requestAnimationFrame(gamePlay)
 }
 function gameStatusChange() {
-  if(urineTotal === 1 && scoreTotal < 5) {
+  if (urineTotal === 1 && scoreTotal < 5) {
     gameStatus.innerText = "YOU'RE LOSING!!!";
-  } else if(urineTotal <= 2 && (scoreTotal >= 3 && scoreTotal < 5)) {
+  } else if (urineTotal <= 2 && (scoreTotal >= 3 && scoreTotal < 5)) {
     gameStatus.innerText = "I'm nervous...";
-  } else if(urineTotal === 2 && scoreTotal < 5){
+  } else if (urineTotal === 2 && scoreTotal < 5) {
     gameStatus.innerText = "YOU'RE ABOUT TO LOSE!!!"
-  } else if(scoreTotal >= 5 && scoreTotal <= 7) {
+  } else if (scoreTotal >= 5 && scoreTotal <= 7) {
     gameStatus.innerText = "YOU'RE WINNING!!!";
-  } else if(scoreTotal >= 8 && scoreTotal <=10){
+  } else if (scoreTotal >= 8 && scoreTotal <= 10) {
     gameStatus.innerText = "ALMOST THERE!!!";
-  } else if(scoreTotal === 10){
+  } else if (scoreTotal === 10) {
     gameStatus.innerText = "YOU WON!!!"
   };
 }
@@ -95,11 +109,13 @@ function keypressHandler(key) {
         anitaPettigrew.x <= dog.x + dog.width &&
         anitaPettigrew.y <= dog.y + dog.height &&
         anitaPettigrew.y + anitaPettigrew.height >= dog.y && dog.color === "orange") {
+        dog.clearTimer();
         dogs.pop();
         scoreTotal++;
         scoreCount.innerText = scoreTotal;
-        urineTotal = urineTotal - 1;
-        gameStatusChange();
+        // urineTotal = urineTotal - 1;
+        // gameStatusChange();
+        generateDog();
       }
   };
 }
@@ -115,27 +131,27 @@ function randomY() {
 function generateDog() {
   gameStatusChange();
   winCondition();
-  if(lossToDog === false && winAgainstDog === false) {
+  if (!gameOver) {
     let pomeranianX = randomX();
     let pomeranianY = randomY();
-    const pom = new Creature(pomeranianX, pomeranianY, "orange", 20, 20);
+    const pom = new Creature(pomeranianX, pomeranianY, "orange", 20, 20, true);
     dogs.push(pom);
     pom.render();
-    dogPee(pom);
+    // dogPee(pom);
   };
 }
 
 function dogPee(pom) {
-  let timeOut = setTimeout(function () {
-    pom.color = "yellow";
-    urineCount.innerText = urineTotal;
-    gameStatusChange();
-    generateDog();
-  }, 10000);
-  urineTotal++;
-  if(lossToDog === true || winAgainstDog === true) {
-    clearTimeout(timeOut);
-  };
+  // let timeOut = setTimeout(function () {
+  //   pom.color = "yellow";
+  //   urineTotal++;
+  //   urineCount.innerText = urineTotal;
+  //   gameStatusChange();
+  //   generateDog();
+  // }, 10000);
+  // if(lossToDog === true || winAgainstDog === true) {
+  //   clearTimeout(timeOut);
+  // };
 }
 
 function winPage() {
@@ -163,6 +179,7 @@ function gameStart() {
   dogs.splice(0, dogs.length); //clears the array without deleting the array.
   scoreTotal = 0;
   urineTotal = 0;
+  gameOver = false;
   generateDog();
   gamePlay();
 }
