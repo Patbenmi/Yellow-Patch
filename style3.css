@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background-image: url("../images/Grass.jpg");
+  background-image: url("./Grass.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100vw;

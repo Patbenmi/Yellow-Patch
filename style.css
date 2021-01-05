@@ -1,5 +1,5 @@
 body {
-  background-image: url("../images/walk.jpg");
+  background-image: url("./walk.jpg");
   color: yellow;
   font-family: 'Bangers', cursive;
   /* background-color: darkgreen; */
@@ -17,7 +17,7 @@ h1 {
 }
 canvas { 
   background-color: chartreuse;
-  background-image: url("../images/HealthyGrass.jpg");
+  background-image: url("./HealthyGrass.jpg");
   height: 50vh;
   width: 100%;
 }
