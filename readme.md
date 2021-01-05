@@ -3,7 +3,7 @@
 ## Premise:
 The name of this application is Yellow Patch. I decided to create this after being presenting with perameters of a project that required a fully-operational interactive game. This project, the first major assignment in my course, was issued in order to display successful attainment of the necessary skills covered in Unit 1 - HTML, CSS & JavaScript.
 
-Here is a link to the live version of this project -  -----------
+Here is a link to the live version of this project -  https://patbenmi.github.io/Yellow-Patch/
 
 ## Prep Materials
 So, when originally presented with the project outline, I was amiss. I could not figure out what kind of game I would create and I didn't know what subject to have it cover. One of the last things that my cohort covered in class before break was Canvas, which I immediately felt would be the medium for me to utilize. At the time I was fairly comfortable with both flex and grid but I decided that grid should be used.
