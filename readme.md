@@ -16,10 +16,10 @@ Currently there is a lag in the code between when the winning number is acheived
 
 ## Stretch Goals
 My stretch goals are as follows:
-- establish multiple kinds of dogs that produce different sizes/quantities of yellow spots at different time intervals.
--Add images for Anita and the various dogs that appear in her yard.
--Add a level option so that as you advance through the levels, the rate at which dogs show up lessens.
--Add the ability to save your initials and for the ten highest scores to display on the Win page under the greeting.
+1. Establish multiple kinds of dogs that produce different sizes/quantities of yellow spots at different time intervals.
+2. Add images for Anita and the various dogs that appear in her yard.
+3. Add a level option so that as you advance through the levels, the rate at which dogs show up lessens.
+4. Add the ability to save your initials and for the ten highest scores to display on the Win page under the greeting.
 
 
 ## Credits
